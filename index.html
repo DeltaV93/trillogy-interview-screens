@@ -11,7 +11,7 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Trilogy Interview Quick Links</h1>
-        <p class="lead">Reduce setup time. Find all the important links.</p>
+        <p class="lead">Reduce setup time. Find all the important links in seconds.</p>
     </div>
 </div>
 <div class="container">
@@ -28,7 +28,94 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="fsf" role="tabpanel" aria-labelledby="fsf-tab">
+            <ol>
+                <li> Check List
+                    <a href="https://docs.google.com/document/d/1K2UD3jtb9gdUgA2L98RewPm6UuMGF7A-z5_Fk4Xr8CU/edit"
+                        target="_blank">Found Here</a>
+                </li>
+                <li> Broken Code
+                    <a href="code-smaples/fsf-code-sample.html" class="btn btn-primary btn-sm" download>Download Code</a>
+                    <a href="#show-code--link" id="show-code--link">Show Code for Copy & Past</a>
+                    <pre id="code-block" class="d-none">
+                        <code>
+                            <xmp>
 
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> <title>intro js</title> <!-- Latest compiled and minified CSS --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> <!-- Optional theme --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> <style type="text/css"> .marginUp {margin-top: 75px; } .marginDown {margin-bottom: 200px; } .marginUpSmall {margin-top: 25px; } .marginDownSmall{margin-bottom: 25px; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">Example 6</a> </div> <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1 id="main-heading" class="text-center marginUp">Data Attributes</h1>
+        <p class="lead text-center" id="heading-text">are awesome</p>
+
+        <div class="row marginDown">
+            <div class="col-md-6 col-md-offset-4">
+
+                <div id="mainButtons">
+<button data-tvshow="earth">1</button>
+<button data-tvshow="fire">2</button> <button data-tvshow="wind">3</button> <button data-tvshow="water">4</button> <button data-tvshow="heart">5</button> <button data-tvshow="go-planet">6</button> </div> <br> <a id="addButtonAbove" href="#">add another button above</a> </div> </div> </div> </div><!-- /.container -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+( document ).ready(function() {
+
+('button').on('click', function(){
+var part = $(this).data('tvshow');
+
+alert part);
+});
+
+$('#addButtonAbove').on('click', function(){
+var newButton = $('<button/>');
+
+newButton.html("click here to find out the tv show's name")
+
+newButton.attr('data-tvshow', 'Captain Planet!')
+
+newButton.appendTo( $('#mainButtons') )
+});
+
+});
+</script>
+
+
+</body>
+</html>                                
+                            </xmp>
+                        </code>
+                    </pre>
+                </li>
+                <li> Interview Script
+                    <a href="https://docs.google.com/document/d/1UiOulvVFKj7v92qG7-QFTfpsVzthIF1D9isRIhKA6E0"
+                        target="_blank">Found Here !</a>
+                </li>
+                <li> Google form to score
+                    <a href="https://docs.google.com/forms/u/7/d/e/1FAIpQLSfshnjYFC8TImYze9qPOPSGNZxWufMIVLtoRc7Kj3WbLxCRsg/formResponse"
+                        target="_blank">Found Here</a>
+                </li>
+                <li> Update the Matrix
+                    <a href="https://docs.google.com/spreadsheets/d/12eadVv6t9vStFOEyoCdCvxU_GhndibefOXWrOR7OkG8/edit#gid=0"
+                        target="_blank">Found Here</a>
+                </li>
+            </ol>
         </div>
         <div class="tab-pane fade" id="dv" role="tabpanel" aria-labelledby="dv-tab">...</div>
         <div class="tab-pane fade" id="ux-ui" role="tabpanel" aria-labelledby="contact-tab">...</div>
@@ -42,5 +129,11 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
 <script src="js/bootstrap.js"></script>
+<script>
+    $( '#show-code--link' ).on('click',function() {
+        console.log('test');
+        $('#code-block').toggleClass('d-none');
+    });
+</script>
 </body>
 </html>
