@@ -1,0 +1,11 @@
+#code-block {
+    background: lightgrey;
+    font-family: monospace;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+xmp {
+    padding: 0 35px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
