@@ -1,3 +1,8 @@
+.jumbotron {
+    background-image: linear-gradient(to right top, #006494, #007caa, #0095c0, #0baed3, #28c8e5);
+    color: #ffffff;
+    box-shadow: 0px 3px 7px rgba(0,0,0,0.2);
+}
 #code-block {
     background: lightgrey;
     font-family: monospace;
@@ -8,4 +13,37 @@ xmp {
     padding: 0 35px;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+body  {
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.interviews--card {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 0;
+    box-shadow: ;
+}
+h5 {
+    text-transform: capitalize;
+}
+a {
+    color: #28c8e5;
+}
+a:hover {
+    color: #166E7D;
+}
+.btn {
+    border-radius: 0;
+}
+.btn-primary {
+    background-color: #28c8e5;
+    outline: none;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #166E7D;
+    outline: none;
+    border: none;
 }
