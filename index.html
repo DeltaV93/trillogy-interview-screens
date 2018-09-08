@@ -252,18 +252,19 @@ $('#addButtonAbove').on('click', function(){
      * appropriate message is printed.
      */
     function listUpcomingEvents() {
+        var todaysDate = moment().format("YYYY-MM-DD");
+        var skippedInterviews = 0;
+
         gapi.client.calendar.events.list({
             'calendarId': 'primary',
-            'timeMin': (new Date()).toISOString(),
+            'timeMin': todaysDate + 'T00:00:00.000Z',
             'showDeleted': false,
             'singleEvents': true,
             'maxResults': 10,
             'orderBy': 'startTime'
         }).then(function(response) {
             var events = response.result.items;
-//            var todaysDate = moment().format("YYYY-MM-DD");
-            var todaysDate = "2018-09-06";
-            var skippedInterviews = 0;
+
             document.getElementById('interview-card-title').innerHTML = 'Today\'s Interviews';
             if (events.length > 0) {
                 for (i = 0; i < events.length; i++) {
