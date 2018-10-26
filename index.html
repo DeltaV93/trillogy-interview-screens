@@ -50,11 +50,11 @@
                 <div class="tab-pane fade show active" id="fsf" role="tabpanel" aria-labelledby="fsf-tab">
                     <ol>
                         <li> Check List
-                            <a href="https://docs.google.com/document/d/1K2UD3jtb9gdUgA2L98RewPm6UuMGF7A-z5_Fk4Xr8CU/edit"
+                            <a href="https://docs.google.com/document/d/1Fz_Xf_rvI4K6rmy3BZGuK0cLU6Ma12EXMiJyo7kWVeQ/edit"
                                target="_blank">Found Here</a>
                         </li>
                         <li> Broken Code Example
-                            <a href="code-smaples/fsf-code-sample.html" class="btn btn-outline-secondary btn-sm" download>Download Code</a>
+                            <a href="code-smaples/demo.html" class="btn btn-outline-secondary btn-sm" download>Download Code</a>
                             <a href="#show-code--link" id="show-code--link" class="btn btn-primary btn-sm">Code Copy</a>
                             <code id="code-block" class="d-none">
                             <xmp class="language-html" data-lang="html">
@@ -139,7 +139,101 @@ $('#addButtonAbove').on('click', function(){
                         </li>
                     </ol>
                 </div>
-                <div class="tab-pane fade" id="dv" role="tabpanel" aria-labelledby="dv-tab">...</div>
+                <div class="tab-pane fade" id="dv" role="tabpanel" aria-labelledby="dv-tab">
+                    <ol>
+                        <li> Check List
+                            <a href="https://docs.google.com/document/d/1K2UD3jtb9gdUgA2L98RewPm6UuMGF7A-z5_Fk4Xr8CU/edit"
+                               target="_blank">Found Here</a>
+                        </li>
+                        <li> Broken Code Example
+                            <a href="code-smaples/unsolved.zip" class="btn btn-outline-secondary btn-sm" download>Download Code Folder Code</a>
+                            <a href="#show-code--link__dv" class="btn btn-primary btn-sm">Code Copy</a>
+                            <code id="code-block__dv" class="d-none">
+                                <xmp class="language-html" data-lang="html">
+                                    '''
+                                    Weather Finder
+                                    ===============
+                                    The code should retrieve the current weather of each city listed in the provided csv file using the OpenWeatherMap API.
+                                    It should then print a running list of JSONs for each city in the console.
+                                    It should finally save the city names and temperatures in a new csv.
+
+                                    '''
+
+                                    # Dependencies
+                                    import requests as req
+                                    import json
+                                    import csv
+
+                                    # OpenWeather API Key
+                                    api_key = "6bcabf9648fe4420192e0190f0d04a23 "
+
+                                    # Specify File Path
+                                    csvpath = "cities.txt"
+
+                                    # Read CSV
+                                    with open(csvpath) as csvfile:
+
+                                    # Read the file specifying commas as delimiters
+                                    csvreader = csv.reader(csvfile, delimiter=",")
+
+                                    # Iterate through each row of the CSV
+                                    for row in csvreader:
+
+                                    # Print each row of the csv
+                                    print(row[0])
+
+                                    # Build an endpoint URL to the OpenWeatherMap Service
+                                    url = "http://api.openweathermap.org/data/2.5/weather?"
+                                    query_url = url + "q=" + city + "&appid=" + api_key + "&units=Imperial"
+
+                                    # Make a request to the endpoint url
+                                    weather_response = req.get(query_url)
+                                    weather_json = weather_response.json()
+
+                                    # Print the JSON for each
+                                    print(weather_json)
+
+                                    # Extract the temperature for each city
+                                    temperature = weather_json["main"]["temperature"]
+
+                                    # Print the Temperatures
+                                    print(temperature)
+
+                                    # Draw a separating line
+                                    print("---------------")
+
+                                    # Write the contents for each to a new CSV
+                                    output_file = "output.csv"
+                                    with open(output_file, "w") as csvfile:
+
+                                    # Initialize the csv.writer
+                                    csvwriter = csv.writer(csvfile, delimiter=",")
+
+                                    # Write each row
+                                    csvwriter.writerow([row[0], temperature])
+
+
+                                </xmp>
+                            </code>
+                        </li>
+                        <li> Interview Script
+                            <a href="https://drive.google.com/open?id=10yFtRpw6o6pm0LKBdDb4PGebvh3DtplMj4_qsgQkQLY"
+                               target="_blank">Found Here !</a>
+                        </li>
+                        <li> Google form to score
+                            <a href="https://docs.google.com/forms/u/7/d/e/1FAIpQLSfshnjYFC8TImYze9qPOPSGNZxWufMIVLtoRc7Kj3WbLxCRsg/formResponse"
+                               target="_blank">Found Here</a>
+                        </li>
+                        <li> Update the Matrix
+                            <a href="https://docs.google.com/spreadsheets/d/12eadVv6t9vStFOEyoCdCvxU_GhndibefOXWrOR7OkG8/edit#gid=0"
+                               target="_blank">Found Here</a>
+                        </li>
+                        <li> Follow Up Interview
+                            <a href="https://interviewfollowup.youcanbook.me/"
+                               target="_blank">Found Here</a>
+                        </li>
+                    </ol>
+                </div>
                 <div class="tab-pane fade" id="ux-ui" role="tabpanel" aria-labelledby="contact-tab">...</div>
             </div>
         </div>
@@ -254,10 +348,12 @@ $('#addButtonAbove').on('click', function(){
     function listUpcomingEvents() {
         var todaysDate = moment().format("YYYY-MM-DD");
         var skippedInterviews = 0;
+        console.log(todaysDate + 'T00:00:00.000Z');
 
         gapi.client.calendar.events.list({
             'calendarId': 'primary',
-            'timeMin': todaysDate + 'T00:00:00.000Z',
+            // 'timeMin': todaysDate + 'T00:00:00.000Z',
+            'timeMin': '2018-08-11T00:00:00.000Z',
             'showDeleted': false,
             'singleEvents': true,
             'maxResults': 10,
@@ -273,7 +369,8 @@ $('#addButtonAbove').on('click', function(){
                     if (!when) {
                         when = event.start.date;
                     }
-                    if( event.summary.includes('Interview Booked') && when.includes(todaysDate) ){
+                    // if( event.summary.includes('Interview Booked') && when.includes(todaysDate) ){
+                        if( event.summary.includes('Interview Booked') && when.includes(todaysDate) ){
                         appendPre(event.summary + ' (' + when + ')', event.description)
                     } else {
                         skippedInterviews++;
